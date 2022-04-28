@@ -4,6 +4,7 @@ import React from "react";
 import AboutUs from "./pages/AboutUs";
 
 // import styles
+import "../src/styles/app.scss";
 
 function App() {
   return (
