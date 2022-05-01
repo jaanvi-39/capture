@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
 }
 body{
     background: rgb(23, 23, 23);
+    font-family: 'Inter', sans-serif;
 }
 button{
     cursor: pointer;
