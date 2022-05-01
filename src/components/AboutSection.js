@@ -4,6 +4,8 @@ import home1 from "../img/home1.png";
 //importing styled components
 import styled from "styled-components";
 
+import { About, StyledDescription, Image, Hide } from "./styles";
+
 const AboutSection = () => {
   return (
     <About>
@@ -34,38 +36,4 @@ const AboutSection = () => {
   );
 };
 
-const About = styled.div`
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5rem 10rem;
-  color: white;
-`;
-
-const StyledDescription = styled.div`
-  flex: 1;
-  padding-right: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  h2 {
-    font-weight: lighter;
-  }
-  /* justify-content: space-between; */
-`;
-
-const Image = styled.div`
-  flex: 1;
-  overflow: hidden;
-  img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-  }
-`;
-
-const Hide = styled.div`
-  overflow: hidden;
-`;
 export default AboutSection;
