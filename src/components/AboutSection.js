@@ -2,7 +2,7 @@ import React from "react";
 import home1 from "../img/home1.png";
 
 //importing styled components
-import styled from "styled-components";
+// import styled from "styled-components";
 
 import { About, StyledDescription, Image, Hide } from "./styles";
 
