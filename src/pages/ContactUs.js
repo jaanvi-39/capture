@@ -1,6 +1,6 @@
 const ContactUs = () => {
   return (
-    <div className="contact">
+    <div className="contact2">
       <p> Contact Us</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sunt
