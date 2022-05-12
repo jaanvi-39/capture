@@ -8,9 +8,18 @@ import theracerSmall from "../img/theracer-small.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
+import { pageTransition } from "../animation";
+
 const OurWork = () => {
   return (
-    <Work>
+    <Work
+      variants={pageTransition}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      style={{ background: "#fff" }}
+    >
       <Movie>
         <h2>The Athlete</h2>
         <div className="line"></div>
@@ -35,12 +44,13 @@ const OurWork = () => {
     </Work>
   );
 };
-const Work = styled.div`
+const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
   h2 {
     padding: 1rem 0rem;
+    color: #282828;
   }
 `;
 

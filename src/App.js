@@ -11,22 +11,27 @@ import Nav from "./components/Nav";
 
 import MovieDetails from "./pages/MovieDetails";
 
-import { Route, Routes } from "react-router";
+import { AnimatePresence } from "framer-motion";
+
+import { Route, Routes, useLocation } from "react-router";
 // import { Route, Switch } from "react-router";
 // import styles
 // import "../src/styles/app.scss";
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
       <GlobalStyles />
       <Nav />
-      <Routes>
-        <Route path="/" exact element={<AboutUs />} />
-        <Route path="/work" exact element={<OurWork />} />
-        <Route path="/contact" exact element={<ContactUs />} />
-        <Route path="/work/:id" element={<MovieDetails />} />
-      </Routes>
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" exact element={<AboutUs />} />
+          <Route path="/work" exact element={<OurWork />} />
+          <Route path="/contact" exact element={<ContactUs />} />
+          <Route path="/work/:id" element={<MovieDetails />} />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }

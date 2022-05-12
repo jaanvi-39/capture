@@ -1,6 +1,13 @@
+import { motion } from "framer-motion";
+import { pageTransition } from "../animation";
 const ContactUs = () => {
   return (
-    <div className="contact2">
+    <motion.div
+      variants={pageTransition}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       <p> Contact Us</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sunt
@@ -8,7 +15,7 @@ const ContactUs = () => {
         quibusdam eveniet sequi repudiandae aperiam illo obcaecati, inventore
         rerum? Harum.
       </p>
-    </div>
+    </motion.div>
   );
 };
 

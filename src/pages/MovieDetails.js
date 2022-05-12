@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { MovieState } from "../movieState";
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { pageTransition } from "../animation";
 
 const MovieDetails = () => {
   const history = useLocation();
@@ -20,7 +22,12 @@ const MovieDetails = () => {
   return (
     <>
       {movie && (
-        <Details>
+        <Details
+          exit="exit"
+          variants={pageTransition}
+          initial="hidden"
+          animate="show"
+        >
           <Heading>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="movieImage" />
@@ -43,7 +50,7 @@ const MovieDetails = () => {
   );
 };
 
-const Details = styled.div``;
+const Details = styled(motion.div)``;
 const Heading = styled.div`
   min-height: 90vh;
   padding-top: 20vh;
