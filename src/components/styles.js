@@ -11,6 +11,7 @@ export const About = styled.div`
 
 export const StyledDescription = styled.div`
   flex: 1;
+  z-index: 2;
   padding-right: 5rem;
   display: flex;
   flex-direction: column;
@@ -22,6 +23,7 @@ export const StyledDescription = styled.div`
 `;
 
 export const Image = styled.div`
+  z-index: 2;
   flex: 1;
   overflow: hidden;
   img {
