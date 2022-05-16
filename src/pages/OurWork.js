@@ -9,7 +9,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
-import { pageTransition } from "../animation";
+import {
+  staggerFrame,
+  pageTransition,
+  fade,
+  photoAnimation,
+  lineAnim,
+  slider,
+} from "../animation";
 
 const OurWork = () => {
   return (
@@ -20,25 +27,46 @@ const OurWork = () => {
       exit="exit"
       style={{ background: "#fff" }}
     >
+      <motion.div variants={staggerFrame}>
+        <Frame1 variants={slider}></Frame1>
+        <Frame2 variants={slider}></Frame2>
+        <Frame3 variants={slider}></Frame3>
+        <Frame4 variants={slider}></Frame4>
+      </motion.div>
+
       <Movie>
-        <h2>The Athlete</h2>
-        <div className="line"></div>
+        <motion.h2 variants={fade}>The Athlete</motion.h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
-          <img src={athleteSmall} alt="athleteSmall"></img>
+          <Hide>
+            <motion.img
+              variants={photoAnimation}
+              src={athleteSmall}
+              alt="athleteSmall"
+            ></motion.img>
+          </Hide>
         </Link>
       </Movie>
       <Movie>
-        <h2>The Racer</h2>
+        <motion.h2 variants={fade}>The Racer</motion.h2>
         <div className="line"></div>
         <Link to="/work/the-racer">
-          <img src={theracerSmall} alt="theracerSmall"></img>
+          <motion.img
+            variants={photoAnimation}
+            src={theracerSmall}
+            alt="theracerSmall"
+          ></motion.img>
         </Link>
       </Movie>
       <Movie>
-        <h2>Good Times</h2>
+        <motion.h2 variants={fade}>Good Times</motion.h2>
         <div className="line"></div>
         <Link to="/work/good-times">
-          <img src={goodtimesSmall} alt="goodtimesSmall"></img>
+          <motion.img
+            variants={photoAnimation}
+            src={goodtimesSmall}
+            alt="goodtimesSmall"
+          ></motion.img>
         </Link>
       </Movie>
     </Work>
@@ -59,7 +87,7 @@ const Movie = styled.div`
 
   .line {
     height: 0.5rem;
-    background: #cccccc;
+    background: #23d997;
     margin-bottom: 5rem;
   }
 
@@ -69,4 +97,29 @@ const Movie = styled.div`
     object-fit: cover;
   }
 `;
+
+const Hide = styled.div`
+  overflow: hidden;
+`;
+
+//Framer motion
+const Frame1 = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  height: 100vh;
+  background: #fffebf;
+  z-index: 2;
+`;
+const Frame2 = styled(Frame1)`
+  background: #ff8efb;
+`;
+const Frame3 = styled(Frame1)`
+  background: #8ed2ff;
+`;
+const Frame4 = styled(Frame1)`
+  background: #8effa0;
+`;
+
 export default OurWork;
