@@ -7,11 +7,19 @@ import diaphragm from "../img/diaphragm.svg";
 
 import styled from "styled-components";
 
+import { useScroll } from "./useScroll";
+import { scrollAnimation } from "../animation";
 import { About, StyledDescription, Image } from "./styles";
 
 const Services = () => {
+  const [element, controls] = useScroll();
   return (
-    <About>
+    <StyledServices
+      variants={scrollAnimation}
+      animate={controls}
+      initial={"hidden"}
+      ref={element}
+    >
       <Image>
         <img src={home2} alt="home2image"></img>
       </Image>
@@ -50,9 +58,11 @@ const Services = () => {
           </Card>
         </Cards>
       </StyledDesc>
-    </About>
+    </StyledServices>
   );
 };
+
+const StyledServices = styled(About)``;
 
 const StyledDesc = styled(StyledDescription)`
   padding-right: 0rem;

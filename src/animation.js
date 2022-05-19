@@ -95,3 +95,27 @@ export const staggerFrame = {
     },
   },
 };
+export const scrollAnimation = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+export const sliderImage= {
+  hidden: {
+    width: "0%",
+    // skew: "45deg",
+  },
+  show: {
+    width: "100%",
+    //  skew: "0deg",
+    transition: { duration: 1, ease: "easeOut" },
+  },
+};
