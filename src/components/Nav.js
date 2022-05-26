@@ -30,6 +30,9 @@ const StyleNav = styled.div`
   margin: auto;
   align-items: center;
   padding: 1rem 10rem;
+  position: sticky;
+  z-index: 10;
+  top: 0;
 
   h2 {
     font-size: 1.8rem;

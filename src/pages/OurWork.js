@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 import { useScroll } from "../components/useScroll";
+import ScrollTop from "../components/ScrollTop";
 import {
   sliderImage,
   staggerFrame,
@@ -31,6 +32,7 @@ const OurWork = () => {
       exit="exit"
       style={{ background: "#fff" }}
     >
+      <ScrollTop />
       <motion.div variants={staggerFrame}>
         <Frame1 variants={slider}></Frame1>
         <Frame2 variants={slider}></Frame2>
