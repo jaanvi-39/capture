@@ -6,6 +6,11 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
 }
+html{
+  @media (max-width: 1700px){
+    font-size: 75%;
+  }
+}
 body{
     background: rgb(23, 23, 23);
     font-family: 'Inter', sans-serif;

@@ -93,6 +93,9 @@ const StyledAbout = styled(About)`
       padding: 1rem 0rem;
     }
   }
+  @media (max-width: 900px) {
+    padding: 5rem 3rem;
+  }
 `;
 
 export default FaqSection;

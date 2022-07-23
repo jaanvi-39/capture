@@ -8,19 +8,27 @@ export const About = styled(motion.div)`
   justify-content: space-between;
   padding: 5rem 10rem;
   color: white;
+  @media (max-width: 1300px) {
+    display: block;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
 `;
 
 export const StyledDescription = styled.div`
   flex: 1;
   z-index: 2;
   padding-right: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   h2 {
     font-weight: lighter;
   }
-  /* justify-content: space-between; */
+  @media (max-width: 1300px) {
+    padding: 0;
+
+    button {
+      margin: 2rem 0rem 5rem 0rem;
+    }
+  }
 `;
 
 export const Image = styled.div`
@@ -31,6 +39,9 @@ export const Image = styled.div`
     width: 100%;
     height: 80vh;
     object-fit: cover;
+    @media (max-width: 1300px) {
+      height: 90vh;
+    }
   }
 `;
 

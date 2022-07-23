@@ -20,9 +20,6 @@ const Services = () => {
       initial={"hidden"}
       ref={element}
     >
-      <Image>
-        <img src={home2} alt="home2image"></img>
-      </Image>
       <StyledDesc>
         <h2>
           High <span> quality </span> services.
@@ -45,7 +42,7 @@ const Services = () => {
           <Card>
             <div className="card-heading">
               <img src={diaphragm} alt="clock"></img>
-              <h3>Pro Grade Gear</h3>
+              <h3>Diaphagram</h3>
             </div>
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
           </Card>
@@ -58,26 +55,37 @@ const Services = () => {
           </Card>
         </Cards>
       </StyledDesc>
+      <Image>
+        <img src={home2} alt="home2image"></img>
+      </Image>
     </StyledServices>
   );
 };
 
-const StyledServices = styled(About)``;
+const StyledServices = styled(About)`
+  @media (max-width: 1300px) {
+    display: block;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
+`;
 
 const StyledDesc = styled(StyledDescription)`
-  padding-right: 0rem;
-  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-left: 0rem;
 `;
 
 const Cards = styled.div`
   padding-top: 3rem;
-
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1300px) {
+    justify-content: center;
+  }
 `;
 
 const Card = styled.div`
-  flex-basis: 15rem;
+  flex-basis: 20rem;
   padding: 0rem 1rem;
 
   .card-heading {

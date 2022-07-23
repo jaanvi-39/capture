@@ -82,6 +82,10 @@ const Awards = styled.div`
   padding: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 1300px) {
+    display: block;
+    padding: 2rem 2rem;
+  }
 
   .line {
     background: #23d997;
